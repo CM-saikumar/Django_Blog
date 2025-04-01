@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    myblog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock  %}
+
+{% block content_body %}
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/self.JPG" %}" alt="Sai - The Author of the Blog" />
+            <h2>Saikumar Blog</h2>
+        </header>
+        <p>Hi, I'm Sai and I love about travelling the world!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My Recent Trip</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    <p>Hi, I'm Sai! I have a deep passion for traveling the world, exploring new cultures, and seeking adventure. 
+        I especially love traveling by bike, feeling the open road, and discovering hidden gems along the way. 
+        In my free time, I enjoy coding, constantly learning new technologies, and improving my skills. 
+        Cooking is another passion of mine—I love experimenting with flavors and creating delicious meals. 
+        Whether it's a thrilling bike ride, a new coding project, or a culinary experiment, I'm always up for an exciting journey! Ï
+    </p>
+    </section>
+
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I have a passion for programming and love exploring new places around the world.</p>
+        <p>My goal is to continuously grow, both in my career and through my travels, discovering new experiences along the way.</p>
+    </section>
+{% endblock  %}
